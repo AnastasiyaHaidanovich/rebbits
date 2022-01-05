@@ -1,7 +1,19 @@
 'use strict';
 
 const arrows = document.querySelectorAll(".arrow");
+const resetBtn = document.querySelector(".btn-reset");
 const square = document.querySelector(".square-body");
+
+resetBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const blocksNum = document.querySelectorAll(".block-number");
+    let count = 0;
+    blocksNum.forEach((elem) => {
+        count++;
+        elem.innerText = count;
+    });
+});
+
 square.addEventListener('click', (e) => {
     if(e.target.closest(".left")){
         let currentBlock = e.target.closest(".block");
